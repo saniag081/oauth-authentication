@@ -1,5 +1,6 @@
+
 function encodeBasic(username, password) {
-    return Buffer.form(`${username}:${password}`).toString("base64");
+    return globalThis.Buffer.from(`${username}:${password}`).toString("base64");
 };
 
 module.exports = encodeBasic;
