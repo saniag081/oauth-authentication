@@ -127,8 +127,7 @@ app.get("/logout", function(req, res) {
 app.get('/callback', (req, res, next) => {
   const { code,  state } = req.query;
   const { auth_state } = req.cookies;
- // console.log(code);
-// console.log(auth_state)
+
   if (state === null || state !== auth_state) {
     next(new Error("The state doesn't match"));
   }
